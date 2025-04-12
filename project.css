@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url(../images/background.png);
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #f371b2;
+  padding: 15px 20px;
+  position: relative;
+}
+
+nav {
+  text-align: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-list li a {
+  color: #070708;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+  color: rgb(106, 106, 212);
+}
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+main {
+  padding: 40px 20px;
+  flex-grow: 1;
+}
+
+#project h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-item {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.project-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+footer {
+  background: #ec80b6;
+  color: #382874;
+  text-align: center;
+  padding: 15px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1024px) {
+  .nav-list {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background: #f371b2;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  #menu-toggle:checked + .hamburger + nav .nav-list {
+    display: flex;
+  }
+
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-item {
+    width: 90%;
+  }
+}
